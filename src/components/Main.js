@@ -18,8 +18,9 @@ const Main = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={(e) => handleSubmit(e)}>
+        <div id='main'>
+            <form id='item-form' onSubmit={(e) => handleSubmit(e)}>
+               <div id='input'>
                 <input type='text' placeholder='task' onChange={handleChange} value={task}></input>
                 <select onChange={(e) => setCategory(e.target.value)}>
                     <option defaultValue disabled selected>category</option>
@@ -27,6 +28,7 @@ const Main = () => {
                     <option value='errands' >Errands</option>
                     <option value='work'>Work</option>
                 </select>
+               </div>
                 <button type='submit'>Add</button>
             </form>
             <ListDisplay list={list} setList={setList}/>
